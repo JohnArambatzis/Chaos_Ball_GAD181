@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Player1
+  - Player2
+  - Ball
+  - RedBall
+  - BlueBall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - RedWall
+  - BlueWall
+  - RedBall
+  - BlueBall
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: RedBall
+    uniqueID: 2300451497
+    locked: 0
+  - name: BlueBall
+    uniqueID: 2250299701
+    locked: 0
+  - name: RedBorder
+    uniqueID: 2078967787
+    locked: 0
+  - name: BlueBorder
+    uniqueID: 1804099389
+    locked: 0
