@@ -9,6 +9,8 @@ TagManager:
   - Ball
   - RedBall
   - BlueBall
+  - SpeedUp
+  - SpeedDown
   layers:
   - Default
   - TransparentFX

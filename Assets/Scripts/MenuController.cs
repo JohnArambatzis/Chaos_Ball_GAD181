@@ -20,6 +20,7 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
+        backgroundImage.SetActive(true);
     }
 
     private void Update()
@@ -38,6 +39,7 @@ public class MenuController : MonoBehaviour
             Time.timeScale = 0;
 
             menuPanel.SetActive(true);
+            backgroundImage.SetActive(true);
         }
     }
 
