@@ -40,7 +40,11 @@ public class Timer : MonoBehaviour
     public void Game()
     {
         Time.timeScale = 0;
+        timer = 60;
+
         menuHolder.GetComponent<MenuController>().menuPanel.SetActive(true);
+        menuHolder.GetComponent<MenuController>().backgroundImage.SetActive(true);
+        
 
         if (redScoreT > blueScoreT)
         {

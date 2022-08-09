@@ -10,6 +10,7 @@ public class MenuController : MonoBehaviour
     public GameObject menuPanel;
     public GameObject controlsPanel;
     public GameObject timerHolder;
+    public GameObject backgroundImage;
 
     public GameObject redWin;
     public GameObject blueWin;
@@ -43,6 +44,8 @@ public class MenuController : MonoBehaviour
     public void PlayButton()
     {
         menuPanel.SetActive(false);
+        backgroundImage.SetActive(false);
+
         redWin.SetActive(false);
         blueWin.SetActive(false);
         draw.SetActive(false);

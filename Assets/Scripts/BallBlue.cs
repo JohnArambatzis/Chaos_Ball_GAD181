@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball1 : MonoBehaviour
+public class BallBlue : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb;
@@ -10,7 +10,7 @@ public class Ball1 : MonoBehaviour
     
     void Start()
     {
-        Launch1();
+        Launch2();
     }
 
     
@@ -19,7 +19,7 @@ public class Ball1 : MonoBehaviour
         
     }
 
-    private void Launch1()
+    private void Launch2()
     {
         float x = Random.Range(0, 2) == 0 ? -1 : 1;
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
