@@ -32,11 +32,11 @@ public class PowerUpSpawner : MonoBehaviour
         }
 
 
-        if (timerSpeedDown < 0.1)
+        if (timerSpeedDown < 8)
         {
             timerSpeedDown += Time.deltaTime;
         }
-        if (timerSpeedDown >= 0.1)
+        if (timerSpeedDown >= 8)
         {
             timerSpeedDown = 0;
 

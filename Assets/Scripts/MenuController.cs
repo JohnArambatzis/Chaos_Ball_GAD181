@@ -34,6 +34,7 @@ public class MenuController : MonoBehaviour
             isPaused = true;
         }
 
+
         if (Input.GetKeyDown(KeyCode.Tab) && !isPaused)
         {
             Time.timeScale = 0;
@@ -41,6 +42,8 @@ public class MenuController : MonoBehaviour
             menuPanel.SetActive(true);
             backgroundImage.SetActive(true);
         }
+
+
     }
 
     public void PlayButton()
