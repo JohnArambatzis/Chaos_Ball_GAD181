@@ -18,6 +18,14 @@ public class BlueGoal : MonoBehaviour
 
             Destroy(collision.gameObject, 0.1f);
         }
+
+        if (collision.transform.tag == "GoldBall")
+        {
+            redScore += 2;
+            redScoreText.text = redScore.ToString();
+
+            Destroy(collision.gameObject, 0.1f);
+        }
     }
 
 }

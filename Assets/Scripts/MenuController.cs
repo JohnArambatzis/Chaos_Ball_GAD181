@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
 
     public GameObject menuPanel;
     public GameObject controlsPanel;
+    public GameObject powerUpsPanel;
     public GameObject timerHolder;
     public GameObject backgroundImage;
 
@@ -64,12 +65,19 @@ public class MenuController : MonoBehaviour
         controlsPanel.SetActive(true);
         menuPanel.SetActive(false);
     }
+    public void PowerUpsButton()
+    {
+        powerUpsPanel.SetActive(true);
+        menuPanel.SetActive(false);
+    }
 
-    public void ControlsBackButton()
+    public void BackButton()
     {
         menuPanel.SetActive(true);
         controlsPanel.SetActive(false);
+        powerUpsPanel.SetActive(false);
     }
+    
 
     public void RestartButton()
     {

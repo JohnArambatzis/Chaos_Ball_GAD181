@@ -25,7 +25,7 @@ public class PowerUpSpawner : MonoBehaviour
             timerSpeedUp = 0;
 
             float spawnY = Random.Range(-3.5f, 3.5f);
-            float spawnX = Random.Range(-3.5f, 3.5f);
+            float spawnX = Random.Range(-1.5f, 1.5f);
 
             Vector2 spawnPosition = new Vector2(spawnX, spawnY);
             Instantiate(speedUp, spawnPosition, Quaternion.identity);

@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GoldBall : MonoBehaviour
+{
+    public float speed;
+    public Rigidbody2D rb;
+
+
+    void Start()
+    {
+        Launch1();
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "SpeedUp")
+        {
+            Destroy(collision.gameObject, 0.1f);
+            speed += 2;
+
+            float x = Random.Range(0, 2) == 0 ? -1 : 1;
+            float y = Random.Range(0, 2) == 0 ? -1 : 1;
+            rb.velocity = new Vector2(speed * x, speed * y);
+        }
+    }
+
+    private void Launch1()
+    {
+        float x = Random.Range(0, 2) == 0 ? -1 : 1;
+        float y = Random.Range(0, 2) == 0 ? -1 : 1;
+        rb.velocity = new Vector2(speed * x, speed * y);
+
+    }
+}

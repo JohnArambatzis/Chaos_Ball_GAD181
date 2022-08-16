@@ -5,13 +5,16 @@ using UnityEngine;
 public class BallSpawner : MonoBehaviour
 {
     public float timer;
+    public float goldBallTimer;
     public float ballSpawnTimer;
 
     public Transform redBallSpawn;
     public Transform blueBallSpawn;
+    public Transform universalSpawn;
 
     public GameObject redBall;
     public GameObject blueBall;
+    public GameObject goldBall;
 
     public GameObject ballSpawner;
 
@@ -28,6 +31,18 @@ public class BallSpawner : MonoBehaviour
             Instantiate(blueBall, blueBallSpawn.position, blueBallSpawn.rotation);
 
             timer = 0;
+        }
+
+
+        if (goldBallTimer < 10)
+        {
+            goldBallTimer += Time.deltaTime;
+        }
+        if (goldBallTimer >= 10)
+        {
+            Instantiate(goldBall, universalSpawn.position, universalSpawn.rotation);
+
+            goldBallTimer = 0;
         }
 
 

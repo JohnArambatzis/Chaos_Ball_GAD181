@@ -18,5 +18,13 @@ public class RedGoal : MonoBehaviour
 
             Destroy(collision.gameObject, 0.1f);
         }
+
+        if (collision.transform.tag == "GoldBall")
+        {
+            blueScore += 2;
+            blueScoreText.text = blueScore.ToString();
+
+            Destroy(collision.gameObject, 0.1f);
+        }
     }
 }
