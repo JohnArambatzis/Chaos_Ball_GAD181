@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6417981971930848106}
   - component: {fileID: 6417981971930848084}
   - component: {fileID: 6417981971930848086}
-  - component: {fileID: 6417981971930848087}
+  - component: {fileID: 6859904969595403002}
   - component: {fileID: -2163648417788150129}
   m_Layer: 10
   m_Name: GoldBall
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.27
---- !u!114 &6417981971930848087
+--- !u!114 &6859904969595403002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6417981971930848104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43209454ae4a33646bd629d7c3a67988, type: 3}
+  m_Script: {fileID: 11500000, guid: 73b1b77525bbf4b42846a3c71cce75a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
