@@ -13,6 +13,8 @@ public class PlayerController2 : MonoBehaviour
 
     public GameObject barrier;
     public GameObject blueBarrier;
+
+    public GameObject redBallBreakerPower;
     public GameObject redBallBreaker;
 
     public Transform blueSpawn;
@@ -38,6 +40,25 @@ public class PlayerController2 : MonoBehaviour
             Instantiate(barrier, blueSpawn.position, blueSpawn.rotation);
 
             barrierTimer = 0;
+        }
+
+
+
+
+        if (ballBreakerTimer < 5)
+        {
+            redBallBreakerPower.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 0.2f);
+            ballBreakerTimer += Time.deltaTime;
+        }
+        if (ballBreakerTimer >= 5)
+        {
+            redBallBreakerPower.GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1f);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && Time.timeScale > 0 && ballBreakerTimer >= 5)
+        {
+            Instantiate(redBallBreaker, blueSpawn.position, blueSpawn.rotation);
+
+            ballBreakerTimer = 0;
         }
     }
 }

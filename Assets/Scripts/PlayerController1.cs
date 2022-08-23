@@ -56,7 +56,7 @@ public class PlayerController1 : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D) && Time.timeScale > 0 && ballBreakerTimer >= 5)
         {
-            Instantiate(barrier, redSpawn.position, redSpawn.rotation);
+            Instantiate(blueBallBreaker, redSpawn.position, redSpawn.rotation);
 
             ballBreakerTimer = 0;
         }

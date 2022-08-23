@@ -18,9 +18,11 @@ public class BallSpawner : MonoBehaviour
     public GameObject goldBall;
     public GameObject ballSpawner;
 
+    public GameObject ballSpawnTimerPointSecondsbutton;
     public GameObject ballSpawnTimerTwoSecondsButton;
     public GameObject ballSpawnTimerFourSecondsButton;
     public GameObject ballSpawnTimerNormalTimeButton;
+    public bool pointSeconds = false;
     public bool twoSeconds = false;
     public bool fourSeconds = false;
     public bool normalTimer = true;
@@ -35,6 +37,21 @@ public class BallSpawner : MonoBehaviour
 
     void Update()
     {
+
+        if (pointSeconds == true)
+        {
+            if (timer < 0.5)
+            {
+                timer += Time.deltaTime;
+            }
+            if (timer >= 0.5)
+            {
+                Instantiate(redBall, redBallSpawn.position, redBallSpawn.rotation);
+                Instantiate(blueBall, blueBallSpawn.position, blueBallSpawn.rotation);
+
+                timer = 0;
+            }
+        }
         if (twoSeconds == true)
         {
             if (timer < 2)
@@ -146,38 +163,60 @@ public class BallSpawner : MonoBehaviour
         }
     }
 
+
+
+    public void TimerPointSecondsButton()
+    {
+        pointSeconds = true;
+        twoSeconds = false;
+        fourSeconds = false;
+        normalTimer = false;
+
+        timer = 0;
+
+        ballSpawnTimerPointSecondsbutton.GetComponent<Button>().interactable = false;
+        ballSpawnTimerTwoSecondsButton.GetComponent<Button>().interactable = true;
+        ballSpawnTimerFourSecondsButton.GetComponent<Button>().interactable = true;
+        ballSpawnTimerNormalTimeButton.GetComponent<Button>().interactable = true;
+    }
     public void TimerTwoSecondsButton()
     {
+        pointSeconds = false;
         twoSeconds = true;
         fourSeconds = false;
         normalTimer = false;
 
         timer = 0;
 
+        ballSpawnTimerPointSecondsbutton.GetComponent<Button>().interactable = true;
         ballSpawnTimerTwoSecondsButton.GetComponent<Button>().interactable = false;
         ballSpawnTimerFourSecondsButton.GetComponent<Button>().interactable = true;
         ballSpawnTimerNormalTimeButton.GetComponent<Button>().interactable = true;
     }
     public void TimerFourSecondsButton()
     {
+        pointSeconds = false;
         twoSeconds = false;
         fourSeconds = true;
         normalTimer = false;
 
         timer = 0;
 
+        ballSpawnTimerPointSecondsbutton.GetComponent<Button>().interactable = true;
         ballSpawnTimerTwoSecondsButton.GetComponent<Button>().interactable = true;
         ballSpawnTimerFourSecondsButton.GetComponent<Button>().interactable = false;
         ballSpawnTimerNormalTimeButton.GetComponent<Button>().interactable = true;
     }
     public void TimerNormalTimeButton()
     {
+        pointSeconds = false;
         twoSeconds = false;
         fourSeconds = false;
         normalTimer = true;
 
         timer = 0;
 
+        ballSpawnTimerPointSecondsbutton.GetComponent<Button>().interactable = true;
         ballSpawnTimerTwoSecondsButton.GetComponent<Button>().interactable = true;
         ballSpawnTimerFourSecondsButton.GetComponent<Button>().interactable = true;
         ballSpawnTimerNormalTimeButton.GetComponent<Button>().interactable = false;
