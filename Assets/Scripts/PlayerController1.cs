@@ -9,9 +9,15 @@ public class PlayerController1 : MonoBehaviour
     private float movement;
 
     public float barrierTimer;
+    public float ballBreakerTimer;
+
     public GameObject barrier;
     public GameObject redBarrier;
-    public Transform redBarrierSpawn;
+
+    public GameObject blueBallBreakerPower;
+    public GameObject blueBallBreaker;
+
+    public Transform redSpawn;
 
     void Update()
     {
@@ -28,11 +34,31 @@ public class PlayerController1 : MonoBehaviour
         {
             redBarrier.GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1f);
         }
-        if (Input.GetKeyDown(KeyCode.D) && Time.timeScale > 0 && barrierTimer >= 10)
+        if (Input.GetKeyDown(KeyCode.A) && Time.timeScale > 0 && barrierTimer >= 10)
         {
-            Instantiate(barrier, redBarrierSpawn.position, redBarrierSpawn.rotation);
+            Instantiate(barrier, redSpawn.position, redSpawn.rotation);
 
             barrierTimer = 0;
+        }
+
+
+
+
+
+        if (ballBreakerTimer < 5)
+        {
+            blueBallBreakerPower.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 0.2f);
+            ballBreakerTimer += Time.deltaTime;
+        }
+        if (ballBreakerTimer >= 5)
+        {
+            blueBallBreakerPower.GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1f);
+        }
+        if (Input.GetKeyDown(KeyCode.D) && Time.timeScale > 0 && ballBreakerTimer >= 5)
+        {
+            Instantiate(barrier, redSpawn.position, redSpawn.rotation);
+
+            ballBreakerTimer = 0;
         }
     }
 }

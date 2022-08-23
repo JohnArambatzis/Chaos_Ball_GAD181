@@ -10,9 +10,11 @@ public class MenuController : MonoBehaviour
     public GameObject menuPanel;
     public GameObject controlsPanel;
     public GameObject powerUpsPanel;
+    public GameObject gameRulesPanel;
+
     public GameObject timerHolder;
     public GameObject backgroundImage;
-
+    
     public GameObject redWin;
     public GameObject blueWin;
     public GameObject draw;
@@ -76,7 +78,15 @@ public class MenuController : MonoBehaviour
         menuPanel.SetActive(true);
         controlsPanel.SetActive(false);
         powerUpsPanel.SetActive(false);
+        gameRulesPanel.SetActive(false);
     }
+
+    public void GameRulesButton()
+    {
+        gameRulesPanel.SetActive(true);
+        menuPanel.SetActive(false);
+    }
+
     
 
     public void RestartButton()

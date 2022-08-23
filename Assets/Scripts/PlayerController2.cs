@@ -9,9 +9,13 @@ public class PlayerController2 : MonoBehaviour
     private float movement;
 
     public float barrierTimer;
+    public float ballBreakerTimer;
+
     public GameObject barrier;
     public GameObject blueBarrier;
-    public Transform blueBarrierSpawn;
+    public GameObject redBallBreaker;
+
+    public Transform blueSpawn;
 
     void Update()
     {
@@ -29,9 +33,9 @@ public class PlayerController2 : MonoBehaviour
         {
             blueBarrier.GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1f);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && Time.timeScale > 0 && barrierTimer >= 10)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && Time.timeScale > 0 && barrierTimer >= 10)
         {
-            Instantiate(barrier, blueBarrierSpawn.position, blueBarrierSpawn.rotation);
+            Instantiate(barrier, blueSpawn.position, blueSpawn.rotation);
 
             barrierTimer = 0;
         }
